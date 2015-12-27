@@ -1,0 +1,52 @@
+Microsoft (R) Macro Assembler Version 5.00                  5/12/15 22:24:34
+                                                             Page     1-1
+
+
+				.386 
+ 0000				data          SEGMENT   
+ 0000  FF49AB00			 val1         dd       11225599 
+ 0004  1F85EB51B81E0940		 val2         dq       3.14 
+ 000C  0000803F			 val3         dd       1. 
+ 0010				data          ENDS 
+				 
+				assume cs:code, ds:data 
+ 0000				code          SEGMENT 
+				 
+ 0000  D9 FD			               Fcos 
+ 0002  D8 80 00000000 R		               Fadd  val1 [eax] 
+ 0008  36: D8 03			        	Fadd ss:dword ptr[ebx] 
+ 000B  D8 C1			               Fadd  st(0),st(1) 
+ 000D  D8 D8			               Fcomp st(0) 
+				 
+ 000F				code          ENDS 
+				end 
+Microsoft (R) Macro Assembler Version 5.00                  5/12/15 22:24:34
+                                                             Symbols-1
+
+
+
+
+                N a m e         	Size	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	32 Bit	000F	PARA	NONE	
+DATA . . . . . . . . . . . . . .  	32 Bit	0010	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+VAL1 . . . . . . . . . . . . . .  	L DWORD	0000	DATA
+VAL2 . . . . . . . . . . . . . .  	L QWORD	0004	DATA
+VAL3 . . . . . . . . . . . . . .  	L DWORD	000C	DATA
+
+@FILENAME  . . . . . . . . . . .  	TEXT  test		
+
+
+     18 Source  Lines
+     18 Total   Lines
+      7 Symbols
+
+  51142 + 465402 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors
